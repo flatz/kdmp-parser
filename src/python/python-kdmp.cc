@@ -77,7 +77,7 @@ void DeleteDumpParser(PyObject *Object) {
 PyObject *DumpParserGetType(PyObject *Object, PyObject *) {
 
   //
-  // Get the dump type (FullDump, KernelDump or BMPDump).
+  // Get the dump type (FullDump, KernelDump, BMPDump or KernelBMPDump).
   //
 
   PythonDumpParser *Self = reinterpret_cast<PythonDumpParser *>(Object);
@@ -326,6 +326,8 @@ PyMODINIT_FUNC PyInit_kdmp(void) {
                           long(kdmpparser::DumpType_t::KernelDump));
   PyModule_AddIntConstant(Module, "BMPDump",
                           long(kdmpparser::DumpType_t::BMPDump));
+  PyModule_AddIntConstant(Module, "KernelBMPDump",
+                          long(kdmpparser::DumpType_t::KernelBMPDump));
 
   return Module;
 }

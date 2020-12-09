@@ -38,7 +38,7 @@ bool KernelDumpParser::Parse(const char *PathFile) {
       printf("BuildPhysmemFullDump failed.\n");
       return false;
     }
-  } else if (DmpHdr_->DumpType == DumpType_t::BMPDump) {
+  } else if (DmpHdr_->DumpType == DumpType_t::BMPDump || DmpHdr_->DumpType == DumpType_t::KernelBMPDump) {
     if (!BuildPhysmemBMPDump()) {
       printf("BuildPhysmemBMPDump failed.\n");
       return false;

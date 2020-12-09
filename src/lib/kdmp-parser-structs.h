@@ -20,7 +20,7 @@ struct uint128_t {
 
 static_assert(sizeof(uint128_t) == 16, "uint128_t's size looks wrong.");
 
-enum class DumpType_t : uint32_t { FullDump = 1, KernelDump = 2, BMPDump = 5 };
+enum class DumpType_t : uint32_t { FullDump = 1, KernelDump = 2, BMPDump = 5, KernelBMPDump = 6 };
 
 //
 // Save off the alignement setting and disable
